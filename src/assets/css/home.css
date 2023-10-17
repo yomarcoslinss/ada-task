@@ -48,12 +48,12 @@
       text-align: center;
       justify-content: center;
       align-items: center;
-    
+
       @media screen and (min-width: 991px) {
         font-size: 24px;
       }
 
-      > .home-span{
+      > .home-span {
         color: var(--cor-primaria);
       }
     }
@@ -66,25 +66,81 @@
       @media screen and (min-width: 991px) {
         font-size: 16px;
       }
-        
+    }
+
+    > label {
+      > .form-input {
+        background-color: #333;
+        color: var(--texto-padrão);
+        width: 100%;
+        padding: 16px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        outline: none;
+        transition: all 0.2s ease-in-out;
+        transition-duration: 0.3s;
+      }
+
+      > .form-input::placeholder {
+        color: #ccc;
+      }
+
+      > .form-input:focus {
+        border: 1px solid var(--cor-primaria);
       }
     }
-    
 
-   
+    > .accept-terms {
+      display: flex;
+      align-items: center;
+      margin-left: 8px;
+
+      > label {
+        margin-left: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--texto-padrão);
+
+        > a {
+          color: var(--cor-primaria);
+          text-decoration: none;
+        }
+      }
+    }
+
+    > .form-btn {
+      width: 100%;
+      background-color: var(--cor-primaria);
+      font-size: 20px;
+      font-weight: 600;
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+      color: var(--bg-primario);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      text-align: center;
+      padding: 16px;
+      border-radius: 8px;
+      outline: none;
+      border: none;
+    }
+
+    > .form-btn:hover {
+      background-color: var(--cor-primaria-hover);
+      box-shadow: 0 8px 12px rgba(154, 220, 89, 0.6),
+        0 4px 8px rgba(0, 0, 0, 0.1);
+      color: var(--texto-padrão);
+      outline: none;
+      border: none;
+    }
   }
 
+  > .home-footer {
+    width: 120px;
 
-
-
-
-  
-
-  .form-input {
-    background-color: #333;
-    color: var(--texto-padrão);
-    width: 100%;
-    padding: 16px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    @media screen and (min-width: 991px) {
+      width: 160px;
+    }
+    > img {
+      width: 100%;
+    }
   }
+}
