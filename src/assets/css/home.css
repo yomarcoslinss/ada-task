@@ -1,0 +1,90 @@
+.home-container {
+  height: 100vh;
+  background-color: var(--bg-primario);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+
+  > .home-header {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+
+    > a > img {
+      width: 60px;
+      margin-top: 24px;
+
+      @media screen and (min-width: 991px) {
+        width: 80px;
+        margin-top: 40px;
+      }
+    }
+  }
+
+  > .home-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: var(--bg-secundario);
+    position: relative;
+    color: var(--texto-padrão);
+    padding: 28px;
+    justify-content: center;
+    border: 1px solid #333;
+    border-radius: 8px;
+
+    > div > .form-title {
+      font-size: 20px;
+      font-weight: 600;
+      position: relative;
+      color: var(--texto-padrão);
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    
+      @media screen and (min-width: 991px) {
+        font-size: 24px;
+      }
+
+      > .home-span{
+        color: var(--cor-primaria);
+      }
+    }
+
+    > div > .form-subtext {
+      font-size: 14px;
+      color: #9ca3af;
+      text-align: center;
+
+      @media screen and (min-width: 991px) {
+        font-size: 16px;
+      }
+        
+      }
+    }
+    
+
+   
+  }
+
+
+
+
+
+  
+
+  .form-input {
+    background-color: #333;
+    color: var(--texto-padrão);
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }

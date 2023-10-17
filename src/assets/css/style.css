@@ -1,0 +1,17 @@
+@import url(./home.css);
+@import url(./task-dashboard.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primario: #181d23;
+  --bg-secundario: #282c33;
+  --cor-primaria: #9adc59;
+  --cor-primaria-hover: #7ebb4a;
+  --texto-padrão: #ffffff;
+}
+
