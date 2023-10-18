@@ -28,7 +28,11 @@
     }
   }
 
-  > .home-form {
+ /*  >.login-form{
+    display: none !important;
+  } */
+
+  > .signup-form, .login-form {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -40,6 +44,10 @@
     border: 1px solid #333;
     border-radius: 8px;
     z-index: 1;
+    height: 100%;
+    max-height: 450px;
+    padding: 20px;
+    margin: 20px;
 
     > div > .form-title {
       font-size: 20px;
@@ -147,7 +155,8 @@
 }
 
 /* Animação Home */
-.square ul li, .square-two ul li{
+.square ul li,
+.square-two ul li {
   position: absolute;
   border: 1px solid var(--cor-primaria);
   background: linear-gradient(to bottom, #9adc59, #c0e889);
@@ -157,99 +166,112 @@
   opacity: 0;
 }
 
-.square li{
+.square li {
   top: 20vh;
   left: 5vw;
   animation: square 8s linear infinite;
 }
 
-.square li:nth-child(2){
+.square li:nth-child(2) {
   top: 90vh;
   left: 25vw;
   animation-delay: 5s;
 }
 
-.square li:nth-child(3){
+.square li:nth-child(3) {
   top: 40vh;
   left: 85vw;
   animation-delay: 10s;
 }
 
-.square li:nth-child(4){
+.square li:nth-child(4) {
   top: 10vh;
   left: 70vw;
   animation-delay: 7s;
 }
 
-.square li:nth-child(5){
+.square li:nth-child(5) {
   top: 80vh;
   left: 55vw;
   animation-delay: 14s;
 }
 
 @keyframes square {
-  0%{
+  0% {
     transform: scale(0) rotateY(20deg);
     opacity: 1;
     border-radius: 10%;
   }
-  
-  100%{
+
+  100% {
     transform: scale(4) rotateY(1000deg);
     opacity: 0;
     border-radius: 20%;
   }
 }
 
-.square-two li{
+.square-two li {
   bottom: 0;
   left: 10vw;
   animation: square-two 12s linear infinite;
 }
 
-.square-two li:nth-child(2){
+.square-two li:nth-child(2) {
   left: 30vw;
   animation-delay: 5s;
 }
 
-.square-two li:nth-child(3){
+.square-two li:nth-child(3) {
   left: 55vw;
   animation-delay: 10s;
 }
 
-.square-two li:nth-child(4){
+.square-two li:nth-child(4) {
   left: 75vw;
   animation-delay: 7s;
 }
 
-.square-two li:nth-child(5){
+.square-two li:nth-child(5) {
   left: 80vw;
   animation-delay: 14s;
 }
 
-.square-two li:nth-child(6){
+.square-two li:nth-child(6) {
   left: 45vw;
   animation-delay: 9s;
 }
 
-.square-two li:nth-child(7){
+.square-two li:nth-child(7) {
   left: 60vw;
   animation-delay: 18s;
 }
 
-
 @keyframes square-two {
-  0%{
+  0% {
     transform: scale(0) rotateY(0deg);
     opacity: 1;
     bottom: 0;
     border-radius: 10%;
   }
-  
-  100%{
+
+  100% {
     transform: scale(5) rotateY(1000deg);
     opacity: 0;
     bottom: 120vh;
     border-radius: 20%;
+  }
+}
+
+.form-subtext {
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #9ca3af;
+  text-align: center;
+
+  > span {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    cursor: pointer;
   }
 }

@@ -10,7 +10,7 @@
     <main>
       <section class="home-container">
         <div class="home-header">
-          <a href="#">  
+          <a href="#">
             <img
               src="https://res.cloudinary.com/dgeeyohmv/image/upload/v1695008540/Ada/ryojcrtncrh2mxvkclnh.jpg"
               alt=""
@@ -18,22 +18,43 @@
           </a>
         </div>
 
-        <form class="home-form" action="">
+        <form class="signup-form" action="">
           <div>
-            <p class="form-title">Faça <span class="home-span">Login</span> ou <span class="home-span">Cadastre-se</span> agora!</p>
+            <p class="form-title">
+              Faça <span class="home-span">Login</span> ou
+              <span class="home-span">Cadastre-se</span> agora!
+            </p>
             <p class="form-subtext">Otimize suas tarefas com AdaTask!</p>
           </div>
 
           <label for="">
-            <input class="form-input" type="text" name="Usuário" placeholder="Usuário" required />
+            <input
+              class="form-input"
+              type="text"
+              name="Usuário"
+              placeholder="Usuário"
+              required
+            />
           </label>
 
           <label for="">
-            <input class="form-input" type="text" name="Senha" placeholder="Senha" required />
+            <input
+              class="form-input"
+              type="text"
+              name="Senha"
+              placeholder="Senha"
+              required
+            />
           </label>
 
           <label for="">
-            <input class="form-input" type="email" name="Email" placeholder="Email" required />
+            <input
+              class="form-input"
+              type="email"
+              name="Email"
+              placeholder="Email"
+              required
+            />
           </label>
 
           <div class="accept-terms">
@@ -50,14 +71,58 @@
           </div>
 
           <button class="form-btn">Criar conta</button>
+          <p class="form-subtext">
+            Ja possui uma conta? <span id="toggle-login">Faça seu login</span>
+          </p>
+        </form>
+
+        <form class="login-form" action=""  style="display: none;">
+          <div>
+            <p class="form-title">
+              Faça <span class="home-span">Login</span> ou
+              <span class="home-span">Cadastre-se</span> agora!
+            </p>
+            <p class="form-subtext">Otimize suas tarefas com AdaTask!</p>
+          </div>
+
+          <label for="">
+            <input
+              class="form-input"
+              type="text"
+              name="Usuário"
+              placeholder="Usuário ou Email"
+              required
+            />
+          </label>
+
+          <label for="">
+            <input
+              class="form-input"
+              type="text"
+              name="Senha"
+              placeholder="Senha"
+              required
+            />
+          </label>
+
+          <div class="accept-terms">
+            <input type="checkbox" id="terms-checkbox" />
+            <label for="terms-checkbox"> Mantenha-me conectado(a) </label>
+          </div>
+
+          <button class="form-btn">Entrar</button>
+          <p class="form-subtext">
+            Não possui uma conta?
+            <span id="toggle-signup">Faça seu cadastro</span>
+          </p>
         </form>
 
         <div class="home-footer">
-          <img src="https://res.cloudinary.com/dgeeyohmv/image/upload/v1695008534/Ada/dgcygx4kbkaxmw73mpmv.png" alt="">
+          <img
+            src="https://res.cloudinary.com/dgeeyohmv/image/upload/v1695008534/Ada/dgcygx4kbkaxmw73mpmv.png"
+            alt=""
+          />
         </div>
-        
-
-        
       </section>
       <div class="square">
         <ul>
@@ -78,9 +143,9 @@
           <li></li>
           <li></li>
           <li></li>
-
         </ul>
       </div>
     </main>
+    <script src="./src/assets/js/login.js"></script>
   </body>
 </html>
