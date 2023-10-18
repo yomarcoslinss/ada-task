@@ -4,15 +4,23 @@ Este projeto tem como objetivo criar um site interativo que permite aos usuário
 
 ## Funcionalidades
 
-### Cadastro de Usuário
+### Cadastro de Usuário (Marcos)
 
 Os usuários podem se cadastrar no site fornecendo um nome de usuário e uma senha. Os dados de usuário são armazenados localmente usando o `localStorage`.
 
-### Login de Usuário
+### Login de Usuário (Marcos)
 
 Os usuários registrados podem fazer login usando seu nome de usuário e senha. O site verifica as credenciais e permite o acesso aos recursos do usuário autenticado.
 
-### Área do Usuário
+### Dinamismo (Alan)
+
+### Sidebar (Kawa)
+
+### Modal (Matheus)
+
+### Tela Login (Matheus)
+
+### Área do Usuário (Todos)
 
 Cada usuário tem uma área personalizada após o login, onde pode realizar as seguintes ações:
 
