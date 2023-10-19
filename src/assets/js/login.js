@@ -43,8 +43,8 @@ function capturarValor(elemento) {
 }
 
 const login = () => {
-  const valueEmail = capturarValor(inputLoginEmail);
-  const valueSenha = capturarValor(inputLoginSenha);
+  const valueEmail = validacoes.validarEmail(capturarValor(inputLoginEmail))
+  const valueSenha = validacoes.validarSenha(capturarValor(inputLoginSenha));
 
   alert(`Funfou! ${valueEmail} ${valueSenha}`);
 };
