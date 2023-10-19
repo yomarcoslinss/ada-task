@@ -1,0 +1,173 @@
+body{
+    height: 100vh;
+}
+
+nav.menu-lateral{
+    width: 30px;
+    height: 100%;
+    background-color: var(--bg-primario);
+    padding: 40px 0 40px 15px;
+    box-shadow: 3px 0 0 var(--cor-primaria);
+    opacity: 1;
+    /* position: fixed; */
+    /* top: 0;
+    left: 0;  */
+    transition: .3s;
+}
+
+nav.menu-lateral.mostrar{
+    width: 260px;
+}
+
+.btn-expandir{
+    width: 100%;
+}
+
+.btn-expandir > i{
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: var(--cor-primaria);
+    padding: 4px;
+    border-radius: 100%;
+    position: fixed;
+}
+
+.btn-expandir > i:hover{
+    background-color: var(--bg-secundario);
+}
+
+.menu-lateral > ul{
+    height: 100%;
+    list-style-type: none;
+}
+
+.esconder{
+    display: none;
+}
+
+.area-menu{
+    margin-top: 50px;
+}
+
+.sidebar-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sidebar-top h3{
+    color: var(--texto-padrão);
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.icon-add{
+    margin-right: 15px;
+    font-size: 25px;
+    color: var(--texto-padrão);
+    line-height: 10px;
+}
+
+.icon-add i:hover{
+    cursor: pointer;
+    background-color: var(--bg-secundario);
+    border-radius: 50%;
+}
+
+.item-menu {
+    transition: background-color 0.3s; 
+    list-style-type: none;
+    border-bottom: 1px solid var(--bg-secundario);
+}
+
+.item-menu:hover {
+    cursor: pointer;
+    background-color: var(--cor-rgb-hover); 
+}
+
+.item-menu a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 20px 4%;
+    /* display: flex; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+.item-menu a .txt-link{
+    margin-left: 20px;
+}
+
+.icon > i{
+    font-size: 20px; 
+}
+
+.area-botao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-logout {
+    margin-top: 150px;
+    padding: 10px;
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+    background: transparent;
+    transition: all 0.2s linear;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-logout:hover {
+    background-color: var(--cor-primaria-hover);
+    color: var(--texto-padrão);
+}
+
+.quadro-card {
+    position: absolute;
+    top: 123px;
+    left: 220px;
+    width: 250px;
+    background-color: var(--bg-secundario);
+    border-radius: 10px;
+    padding: 20px;
+    color: var(--texto-padrão);
+}
+
+.close-button {
+    float: right;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.card-campos {
+    margin-top: 25px;
+}
+
+.card-campos label {
+    font-size: 13px;
+}
+
+.card-campos input {
+    padding: 3px;
+}
+
+.card-campos button {
+    width: 100%;
+    background-color: var(--cor-primaria);
+    border: none;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.card-campos button:hover{
+    background-color: var(--cor-primaria-hover);
+    transition: .2s;
+}
