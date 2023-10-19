@@ -74,12 +74,24 @@ btnCadastrar.addEventListener("click", (e) => {
 const alertMessage = document.querySelector("#alert");
 
 export default function ativarAlert(msg) {
-  const message = document.createElement("div");
-  message.classList.add("message");
-  message.innerText = msg;
-  alertMessage.appendChild(message);
+
+  const messageContainer = document.createElement("div");
+  messageContainer.classList.add("message");
+  const messageImg = document.createElement("img");
+  messageImg.src = "./src/assets/img/error.png";
+  const messageText = document.createElement("p");
+  messageContainer.appendChild(messageImg);
+  messageContainer.appendChild(messageText);
+  messageText.innerText = msg;
+  alertMessage.appendChild(messageContainer);
 
   setTimeout(() => {
-    message.style.display = "none";
-  }, 3000);
+    if (alertMessage.contains(messageContainer)) {
+      alertMessage.removeChild(messageContainer);
+    }
+  }, 2550);
 }
+
+
+setInterval(function () {ativarAlert("aeioaaaaaaaaaau")}, 1000);
+

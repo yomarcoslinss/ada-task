@@ -275,14 +275,28 @@
 /* Animação Alert */
 
 .message {
-  padding: 19px 60px;
+  z-index: 1;
+  padding: 19px 2%;
+  display: flex;
   position: fixed;
   top: 20px;
   right: 105px;
   background-color: #fff;
   border-radius: 3px;
   color: #000;
-  animation: slidein 0.5s cubic-bezier(0.25, 0.46, 0.45, 9.94) both;
+  animation: slidein 0.5s cubic-bezier(0.25, 0.46, 0.45, 2.5) both;
+  justify-content: center;
+  align-content: center;
+
+  @media screen and (max-width: 425px) {
+    padding: 19px 25px;
+  }
+
+}
+
+.message img {
+  width: 5%;
+  margin-right: 5%;
 }
 
 
@@ -305,7 +319,7 @@
   width: 0;
   height: 5px;
   background-color: rgb(255, 0, 0);
-  animation: time 1.5s forwards;
+  animation: time 2.5s forwards;
 }
 
 @keyframes time {
