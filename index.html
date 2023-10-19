@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AdaTask</title>
+    <title>AdaTask - Otimize suas tarefas!</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://res.cloudinary.com/dgeeyohmv/image/upload/v1695006414/k3qiyblwfk0gs7zuw71j.png"
+    />
     <link rel="stylesheet" href="./src/assets/css/style.css" />
   </head>
   <body>
@@ -18,7 +24,7 @@
           </a>
         </div>
 
-        <form class="signup-form" action="">
+        <form class="signup-form">
           <div>
             <p class="form-title">
               Faça <span class="home-span">Login</span> ou
@@ -29,6 +35,7 @@
 
           <label for="">
             <input
+              id="cadastroUsuario"
               class="form-input"
               type="text"
               name="Usuário"
@@ -39,16 +46,7 @@
 
           <label for="">
             <input
-              class="form-input"
-              type="text"
-              name="Senha"
-              placeholder="Senha"
-              required
-            />
-          </label>
-
-          <label for="">
-            <input
+              id="cadastroEmail"
               class="form-input"
               type="email"
               name="Email"
@@ -57,8 +55,19 @@
             />
           </label>
 
+          <label for="">
+            <input
+              id="cadastroSenha"
+              class="form-input"
+              type="text"
+              name="Senha"
+              placeholder="Senha"
+              required
+            />
+          </label>
+
           <div class="accept-terms">
-            <input type="checkbox" id="terms-checkbox" />
+            <input type="checkbox" id="terms-checkbox" required />
             <label for="terms-checkbox">
               Li e concordo com os termos da
               <a
@@ -70,13 +79,13 @@
             </label>
           </div>
 
-          <button class="form-btn">Criar conta</button>
+          <button id="btnCadastrar" class="form-btn">Criar conta</button>
           <p class="form-subtext">
             Ja possui uma conta? <span id="toggle-login">Faça seu login</span>
           </p>
         </form>
 
-        <form class="login-form" action=""  style="display: none;">
+        <form class="login-form" style="display: none">
           <div>
             <p class="form-title">
               Faça <span class="home-span">Login</span> ou
@@ -84,19 +93,20 @@
             </p>
             <p class="form-subtext">Otimize suas tarefas com AdaTask!</p>
           </div>
-
           <label for="">
             <input
+              id="loginEmail"
               class="form-input"
-              type="text"
-              name="Usuário"
-              placeholder="Usuário ou Email"
+              type="email"
+              name="Email"
+              placeholder="Email"
               required
             />
           </label>
 
           <label for="">
             <input
+              id="loginSenha"
               class="form-input"
               type="text"
               name="Senha"
@@ -106,11 +116,11 @@
           </label>
 
           <div class="accept-terms">
-            <input type="checkbox" id="terms-checkbox" />
+            <input type="checkbox" id="terms-checkbox" required />
             <label for="terms-checkbox"> Mantenha-me conectado(a) </label>
           </div>
 
-          <button class="form-btn">Entrar</button>
+          <button id="btnLogin" class="form-btn">Entrar</button>
           <p class="form-subtext">
             Não possui uma conta?
             <span id="toggle-signup">Faça seu cadastro</span>
