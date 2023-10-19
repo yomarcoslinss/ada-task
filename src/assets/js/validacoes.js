@@ -1,3 +1,5 @@
+import ativarAlert from "./login.js";
+
 const validacoes = {
   validarUsuario(usuario) {
     try {
@@ -38,7 +40,7 @@ const validacoes = {
       usuario = primeiraLetraMaiuscula(usuario);
       return usuario;
     } catch (err) {
-      alert(err.message);
+      ativarAlert(err.message);
       throw err;
     }
   },
@@ -63,7 +65,7 @@ const validacoes = {
       email = email.toLowerCase();
       return email;
     } catch (err) {
-      alert(err.message);
+      ativarAlert(err.message);
       throw err;
     }
   },
@@ -90,7 +92,7 @@ const validacoes = {
 
       return senha;
     } catch (err) {
-      alert(err.message);
+      ativarAlert(err.message);
       throw err;
     }
   },
@@ -101,7 +103,7 @@ const validacoes = {
         throw new Error("Para continuar, você precisa aceitar os termos da Política de Privacidade");
       }
     } catch (err) {
-      alert(err.message);
+      ativarAlert(err.message);
       throw err;
     }
   },

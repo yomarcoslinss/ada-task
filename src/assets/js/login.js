@@ -43,19 +43,22 @@ function capturarValor(elemento) {
 }
 
 const login = () => {
-  const valueEmail = validacoes.validarEmail(capturarValor(inputLoginEmail))
+  ativarAlert(msg);
+  const valueEmail = validacoes.validarEmail(capturarValor(inputLoginEmail));
   const valueSenha = validacoes.validarSenha(capturarValor(inputLoginSenha));
 
   alert(`Funfou! ${valueEmail} ${valueSenha}`);
 };
 
 const cadastrar = () => {
-  const valueUsuario = validacoes.validarUsuario(capturarValor(inputCadastroUsuario));
+  const valueUsuario = validacoes.validarUsuario(
+    capturarValor(inputCadastroUsuario)
+  );
   const valueEmail = validacoes.validarEmail(capturarValor(inputCadastroEmail));
   const valueSenha = validacoes.validarSenha(capturarValor(inputCadastroSenha));
   const termosAceitos = validacoes.validarCheckbox(checkAceitoTermos);
 
-  alert(`Funfou! ${valueEmail} ${valueSenha} ${valueUsuario}`);
+  // alert(`Funfou! ${valueEmail} ${valueSenha} ${valueUsuario}`);
 };
 
 btnLogin.addEventListener("click", (e) => {
@@ -67,3 +70,16 @@ btnCadastrar.addEventListener("click", (e) => {
   e.preventDefault();
   cadastrar();
 });
+
+const alertMessage = document.querySelector("#alert");
+
+export default function ativarAlert(msg) {
+  const message = document.createElement("div");
+  message.classList.add("message");
+  message.innerText = msg;
+  alertMessage.appendChild(message);
+
+  setTimeout(() => {
+    message.style.display = "none";
+  }, 3000);
+}
