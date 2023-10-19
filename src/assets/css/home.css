@@ -279,9 +279,9 @@
   position: fixed;
   top: 20px;
   right: 105px;
-  background-color: chocolate;
+  background-color: #fff;
   border-radius: 3px;
-  color: #fff;
+  color: #000;
   animation: slidein 0.5s cubic-bezier(0.25, 0.46, 0.45, 9.94) both;
 }
 
@@ -304,7 +304,7 @@
   bottom: 0;
   width: 0;
   height: 5px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(255, 0, 0);
   animation: time 1.5s forwards;
 }
 
