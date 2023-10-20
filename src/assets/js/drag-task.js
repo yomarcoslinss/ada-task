@@ -35,8 +35,6 @@ function getNewPosition(column, posY) {
   return result;
 }
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const addTaskButtons = document.querySelectorAll(".add-item");
   const taskModal = document.getElementById("task-modal");
@@ -65,8 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
   taskForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-
-
     const taskName = document.getElementById("task-name").value;
     const taskPriority = document.getElementById("task-priority").value;
     const taskDate = document.getElementById("datepicker").value;
@@ -86,7 +82,13 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="priority">
         <div class="${taskPriority}">
           <i class="ph-thin ph-warning-circle"></i>
-          <p>${taskPriority === "low" ? "Baixa" : taskPriority === "medium" ? "Média" : "Alta"}</p>
+          <p>${
+            taskPriority === "low"
+              ? "Baixa"
+              : taskPriority === "medium"
+              ? "Média"
+              : "Alta"
+          }</p>
         </div>
         <div class="priority-date">
           <i class="ph-thin ph-hourglass-medium"></i>
@@ -94,6 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     `;
+
+
 
     // Adicione o novo item à coluna de cartões
     cardColumn.appendChild(newItem);
@@ -105,4 +109,3 @@ document.addEventListener("DOMContentLoaded", function () {
     taskForm.reset();
   });
 });
-

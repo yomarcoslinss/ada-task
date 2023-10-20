@@ -63,6 +63,20 @@
     width: 100%;
     height: 100px;
     border-radius: 5px;
+    overflow: overlay;
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--cor-primaria); /* Cor do polegar da barra de rolagem */
+      border-radius: 5px; /* Borda arredondada do polegar */
+    }
+    
+    &::-webkit-scrollbar {
+      background: var(--bg-secundario);
+      width: 4px;
+      border-radius: 8px;
+
+    }
+
 
     > .item {
       background-color: var(--bg-secundario);
@@ -200,6 +214,7 @@
 
   > .modal-content {
 
+    transition: opacity 0.15s ;
     
     > .form-card {
       display: flex;
@@ -218,6 +233,7 @@
       max-height: 450px;
       padding: 20px;
       margin: 20px;
+      opacity: 1;
 
       > p{
         color: white;
