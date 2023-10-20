@@ -24,6 +24,37 @@ const capturarValor = (elemento) => {
 const login = () => {
   const valueEmail = validacoes.validarEmail(capturarValor(inputLoginEmail));
   const valueSenha = validacoes.validarSenha(capturarValor(inputLoginSenha));
+
+  let listaUser = [];
+
+  const userValid = {
+    email: '',
+    senha: '',
+  };
+
+  listaUser = JSON.parse(localStorage.getItem('listaUser'));
+
+  listaUser.forEach(user => {
+    if(valueEmail === user.email && valueSenha === user.senha){
+      userValid.email = user.email;
+      userValid.senha = user.senha;
+    }
+  });
+
+  if(userValid.email === valueEmail && userValid.senha === valueSenha){
+    ativarAlert("Fazendo login...", true)
+    setInterval(() => {
+      window.location.href = './dashboard.html';
+    }, 2550)
+
+    let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
+    localStorage.setItem('token', token);
+
+    localStorage.setItem('usuarioLogado', JSON.stringify(userValid));
+    
+  } else {
+    ativarAlert("Email e/ou senha inválidos!")
+  }
 };
 
 const cadastrar = () => {
@@ -31,14 +62,36 @@ const cadastrar = () => {
   const valueEmail = validacoes.validarEmail(capturarValor(inputCadastroEmail));
   const valueSenha = validacoes.validarSenha(capturarValor(inputCadastroSenha));
   const termosAceitos = validacoes.validarCheckbox(checkAceitoTermos);
+  const emailJaCadastrado = validacoes.validarCadastroExistente(valueEmail);
+  const listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]');
+
+
+  listaUser.push({
+    usuario: valueUsuario,
+    email: valueEmail,
+    senha: valueSenha,
+  })
+
+  localStorage.setItem('listaUser', JSON.stringify(listaUser))
+  ativarAlert("Cadastrando usuário...", true)
+  setInterval(() => {
+    window.location.href = './dashboard.html';
+  }, 2550)
 };
 
-export default function ativarAlert(msg) {
+export default function ativarAlert(msg, status) {
 
   const messageContainer = document.createElement("div");
   messageContainer.classList.add("message-container");
+  
   const messageImg = document.createElement("img");
-  messageImg.src = "./src/assets/img/error.png";
+  if(status === true) {
+    const root = document.documentElement;
+    root.style.setProperty('--cor-alert', 'green');
+    messageImg.src = "./src/assets/img/sucess.png";
+  } else {
+    messageImg.src = "./src/assets/img/error.png";
+  }
   const messageText = document.createElement("p");
   messageContainer.appendChild(messageImg);
   messageContainer.appendChild(messageText);
