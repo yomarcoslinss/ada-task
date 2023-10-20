@@ -274,9 +274,9 @@
 
 /* Animação Alert */
 
-.message {
+.message-container {
   z-index: 1;
-  padding: 19px 2%;
+  padding: 15px 2%;
   display: flex;
   position: fixed;
   top: 20px;
@@ -286,16 +286,18 @@
   color: #000;
   animation: slidein 0.5s cubic-bezier(0.25, 0.46, 0.45, 2.5) both;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 
   @media screen and (max-width: 425px) {
-    padding: 19px 25px;
+    width: 100%;
+    top: 0;
+    right: 0;
   }
 
 }
 
-.message img {
-  width: 5%;
+.message-container img {
+  width: 25px;
   margin-right: 5%;
 }
 
@@ -311,7 +313,7 @@
   }
 }
 
-.message::before {
+.message-container::before {
   content: "";
   position: absolute;
   left: 0;
