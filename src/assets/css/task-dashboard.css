@@ -16,8 +16,7 @@
     padding: 10px;
     width: 300px;
     border-radius: 5px;
-    box-shadow: 0 4px 12px rgba(154, 220, 89, 0.6),
-        0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(154, 220, 89, 0.6), 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   .card-title {
@@ -64,25 +63,38 @@
     width: 100%;
     height: 100px;
     border-radius: 5px;
-  
+    overflow: overlay;
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--cor-primaria); /* Cor do polegar da barra de rolagem */
+      border-radius: 5px; /* Borda arredondada do polegar */
+    }
+    
+    &::-webkit-scrollbar {
+      background: var(--bg-secundario);
+      width: 4px;
+      border-radius: 8px;
+
+    }
+
+
     > .item {
       background-color: var(--bg-secundario);
       padding: 10px;
       border-radius: 5px;
       color: white;
       gap: 40px;
-      
-  
+
       > .card-name {
         display: flex;
         width: 100%;
         justify-content: space-between;
         align-items: center;
-  
+
         > p {
           width: 100%;
         }
-  
+
         > div {
           display: flex;
           justify-content: end;
@@ -91,10 +103,10 @@
           padding: 4px;
           border-radius: 8px;
           gap: 4px;
-  
+
           > i {
             font-size: 24px;
-  
+
             &:hover {
               cursor: pointer;
               color: var(--cor-primaria);
@@ -102,14 +114,14 @@
           }
         }
       }
-  
+
       > .priority {
         margin-top: 8px;
         display: flex;
         width: 100%;
         justify-content: space-between;
         align-items: center;
-  
+
         > .low {
           display: flex;
           justify-content: center;
@@ -117,12 +129,12 @@
           padding: 4px;
           border-radius: 8px;
           background-color: green;
-  
+
           > i {
             font-size: 20px;
           }
         }
-  
+
         > .medium {
           display: flex;
           justify-content: center;
@@ -130,12 +142,12 @@
           padding: 4px;
           border-radius: 8px;
           background-color: orange;
-  
+
           > i {
             font-size: 20px;
           }
         }
-  
+
         > .high {
           display: flex;
           justify-content: center;
@@ -143,12 +155,12 @@
           padding: 4px;
           border-radius: 8px;
           background-color: red;
-  
+
           > i {
             font-size: 20px;
           }
         }
-  
+
         > .priority-date {
           display: flex;
           justify-content: center;
@@ -156,11 +168,11 @@
           background-color: var(--bg-primario);
           padding: 4px;
           border-radius: 8px;
-  
+
           > i {
             font-size: 20px;
           }
-  
+
           > p {
             font-size: 14px;
           }
@@ -172,4 +184,206 @@
 
 .dragging {
   opacity: 0.5;
+}
+
+.modal {
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.3s ease;
+
+  > span {
+    font-size: 43px;
+    color: var(--cor-primaria);
+    cursor: pointer;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+  }
+
+  > .modal-content {
+
+    transition: opacity 0.15s ;
+    
+    > .form-card {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background-color: var(--bg-secundario);
+      position: relative;
+      color: var(--texto-padrão);
+      padding: 28px;
+      justify-content: center;
+      border: 1px solid #333;
+      border-radius: 8px;
+      z-index: 1;
+      height: 400px;
+      width: 300px;
+      max-height: 450px;
+      padding: 20px;
+      margin: 20px;
+      opacity: 1;
+
+      > p{
+        color: white;
+        text-align: center;
+      }
+
+      > .form-input {
+        background-color: #333;
+        color: var(--texto-padrão);
+        width: 100%;
+        padding: 16px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        outline: none;
+        transition: all 0.2s ease-in-out;
+        transition-duration: 0.3s;
+
+        &::placeholder {
+          color: var(--texto-padrão);
+        }
+
+        &:focus {
+          border: 1px solid var(--cor-primaria);
+        }
+      }
+
+      > .form-btn {
+        width: 100%;
+        background-color: var(--cor-primaria);
+        font-size: 16px;
+        font-weight: 600;
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: var(--bg-primario);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        text-align: center;
+        padding: 16px;
+        border-radius: 8px;
+        outline: none;
+        border: none;
+
+        &:hover {
+          background-color: var(--cor-primaria-hover);
+          box-shadow: 0 8px 12px rgba(154, 220, 89, 0.6),
+            0 4px 8px rgba(0, 0, 0, 0.1);
+          color: var(--texto-padrão);
+          outline: none;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+.edit-modal {
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.3s ease;
+
+  > span {
+    font-size: 43px;
+    color: var(--cor-primaria);
+    cursor: pointer;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+  }
+
+  > .modal-content {
+
+    transition: opacity 0.15s ;
+    
+    > .form-card {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background-color: var(--bg-secundario);
+      position: relative;
+      color: var(--texto-padrão);
+      padding: 28px;
+      justify-content: center;
+      border: 1px solid #333;
+      border-radius: 8px;
+      z-index: 1;
+      height: 400px;
+      width: 300px;
+      max-height: 450px;
+      padding: 20px;
+      margin: 20px;
+      opacity: 1;
+
+      > p{
+        color: white;
+        text-align: center;
+      }
+
+      > .form-input {
+        background-color: #333;
+        color: var(--texto-padrão);
+        width: 100%;
+        padding: 16px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        outline: none;
+        transition: all 0.2s ease-in-out;
+        transition-duration: 0.3s;
+
+        &::placeholder {
+          color: var(--texto-padrão);
+        }
+
+        &:focus {
+          border: 1px solid var(--cor-primaria);
+        }
+      }
+
+      > .form-btn {
+        width: 100%;
+        background-color: var(--cor-primaria);
+        font-size: 16px;
+        font-weight: 600;
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: var(--bg-primario);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        text-align: center;
+        padding: 16px;
+        border-radius: 8px;
+        outline: none;
+        border: none;
+
+        &:hover {
+          background-color: var(--cor-primaria-hover);
+          box-shadow: 0 8px 12px rgba(154, 220, 89, 0.6),
+            0 4px 8px rgba(0, 0, 0, 0.1);
+          color: var(--texto-padrão);
+          outline: none;
+          border: none;
+        }
+      }
+    }
+  }
 }
