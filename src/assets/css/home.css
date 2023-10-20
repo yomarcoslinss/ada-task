@@ -1,3 +1,7 @@
+:root {
+  --cor-alert: red;
+}
+
 .home-container {
   height: 100vh;
   background-color: var(--bg-primario);
@@ -275,6 +279,7 @@
 /* Animação Alert */
 
 .message-container {
+  min-width: 20%;
   z-index: 1;
   padding: 15px 2%;
   display: flex;
@@ -320,7 +325,7 @@
   bottom: 0;
   width: 0;
   height: 5px;
-  background-color: rgb(255, 0, 0);
+  background-color: var(--cor-alert);
   animation: time 2.5s forwards;
 }
 
