@@ -46,7 +46,7 @@ const login = () => {
       window.location.href = './dashboard.html';
     }, 2550)
 
-    let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
+    const token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
     localStorage.setItem('token', token);
 
     localStorage.setItem('usuarioLogado', JSON.stringify(userValid));
@@ -71,8 +71,12 @@ const cadastrar = () => {
     senha: valueSenha,
   })
 
-  localStorage.setItem('listaUser', JSON.stringify(listaUser))
+  localStorage.setItem('listaUser', JSON.stringify(listaUser));
   ativarAlert("Cadastrando usuário...", true)
+  
+  const token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
+  localStorage.setItem('token', token);
+
   setInterval(() => {
     window.location.href = './dashboard.html';
   }, 2550)
