@@ -201,7 +201,6 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  transition: all 0.3s ease;
 
   > span {
     font-size: 43px;
@@ -214,7 +213,6 @@
 
   > .modal-content {
 
-    transition: opacity 0.15s ;
     
     > .form-card {
       display: flex;
@@ -248,8 +246,6 @@
         border-radius: 8px;
         border: 1px solid rgba(255, 255, 255, 0.1);
         outline: none;
-        transition: all 0.2s ease-in-out;
-        transition-duration: 0.3s;
 
         &::placeholder {
           color: var(--texto-padrão);
@@ -267,7 +263,6 @@
         font-weight: 600;
         box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
         color: var(--bg-primario);
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         text-align: center;
         padding: 16px;
         border-radius: 8px;
@@ -302,7 +297,6 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  transition: all 0.3s ease;
 
   > span {
     font-size: 43px;
@@ -315,7 +309,6 @@
 
   > .modal-content {
 
-    transition: opacity 0.15s ;
     
     > .form-card {
       display: flex;
@@ -349,9 +342,7 @@
         border-radius: 8px;
         border: 1px solid rgba(255, 255, 255, 0.1);
         outline: none;
-        transition: all 0.2s ease-in-out;
-        transition-duration: 0.3s;
-
+    
         &::placeholder {
           color: var(--texto-padrão);
         }
@@ -368,7 +359,6 @@
         font-weight: 600;
         box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
         color: var(--bg-primario);
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         text-align: center;
         padding: 16px;
         border-radius: 8px;
