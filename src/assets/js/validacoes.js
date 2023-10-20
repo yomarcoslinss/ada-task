@@ -107,6 +107,20 @@ const validacoes = {
       throw err;
     }
   },
+
+  validarCadastroExistente(email) {
+    try {
+      const listaUser = JSON.parse(localStorage.getItem('listaUser'));
+      listaUser.forEach(user => {
+        if(email === user.email){
+          throw new Error("Esse email já está cadastrado");
+        }
+      });
+    } catch(err) {
+      ativarAlert(err.message);
+      throw err;
+    }
+  }
 };
 
 export default validacoes;
