@@ -271,3 +271,64 @@
     border-radius: 20%;
   }
 }
+
+/* Animação Alert */
+
+.message-container {
+  z-index: 1;
+  padding: 15px 2%;
+  display: flex;
+  position: fixed;
+  top: 20px;
+  right: 105px;
+  background-color: #fff;
+  border-radius: 3px;
+  color: #000;
+  animation: slidein 0.5s cubic-bezier(0.25, 0.46, 0.45, 2.5) both;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 425px) {
+    width: 100%;
+    top: 0;
+    right: 0;
+  }
+
+}
+
+.message-container img {
+  width: 25px;
+  margin-right: 5%;
+}
+
+
+@keyframes slidein {
+  0% {
+    transform: translateX(5%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.message-container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 5px;
+  background-color: rgb(255, 0, 0);
+  animation: time 2.5s forwards;
+}
+
+@keyframes time {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
