@@ -120,109 +120,7 @@
               <i class="ph-thin ph-plus-circle add-item"></i>
             </div>
             <div class="card-column">
-              <div class="item" draggable="true">
-                <div class="card-name">
-                  <p>Card 01</p>
-
-                  <div>
-                    <i class="ph-thin ph-pencil-simple"></i>
-                    <i class="ph-thin ph-trash"></i>
-                  </div>
-                </div>
-                <div class="priority">
-                  <div class="high">
-                    <i class="ph-thin ph-warning-circle"></i>
-                    <p>Alta</p>
-                  </div>
-                  <div class="priority-date">
-                    <i class="ph-thin ph-hourglass-medium"></i>
-                    <p>25 Out 2023</p>
-                  </div>
-                </div>
-              </div>
-              <div id="add-item" class="item" draggable="true">
-                <div class="card-name">
-                  <p>Card 01</p>
-
-                  <div>
-                    <i class="ph-thin ph-pencil-simple"></i>
-                    <i class="ph-thin ph-trash"></i>
-                  </div>
-                </div>
-                <div class="priority">
-                  <div class="medium">
-                    <i class="ph-thin ph-warning-circle"></i>
-                    <p>Média</p>
-                  </div>
-                  <div class="priority-date">
-                    <i class="ph-thin ph-hourglass-medium"></i>
-                    <p>25 Out 2023</p>
-                  </div>
-                </div>
-              </div>
-
-              <div id="add-item" class="item" draggable="true">
-                <div class="card-name">
-                  <p>Card 01</p>
-
-                  <div>
-                    <i class="ph-thin ph-pencil-simple"></i>
-                    <i class="ph-thin ph-trash"></i>
-                  </div>
-                </div>
-                <div class="priority">
-                  <div class="medium">
-                    <i class="ph-thin ph-warning-circle"></i>
-                    <p>Média</p>
-                  </div>
-                  <div class="priority-date">
-                    <i class="ph-thin ph-hourglass-medium"></i>
-                    <p>25 Out 2023</p>
-                  </div>
-                </div>
-              </div>
-
-              <div id="add-item" class="item" draggable="true">
-                <div class="card-name">
-                  <p>Card 01</p>
-
-                  <div>
-                    <i class="ph-thin ph-pencil-simple"></i>
-                    <i class="ph-thin ph-trash"></i>
-                  </div>
-                </div>
-                <div class="priority">
-                  <div class="medium">
-                    <i class="ph-thin ph-warning-circle"></i>
-                    <p>Média</p>
-                  </div>
-                  <div class="priority-date">
-                    <i class="ph-thin ph-hourglass-medium"></i>
-                    <p>25 Out 2023</p>
-                  </div>
-                </div>
-              </div>
-
-              <div id="add-item" class="item" draggable="true">
-                <div class="card-name">
-                  <p>Card 01</p>
-
-                  <div>
-                    <i class="ph-thin ph-pencil-simple"></i>
-                    <i class="ph-thin ph-trash"></i>
-                  </div>
-                </div>
-                <div class="priority">
-                  <div class="medium">
-                    <i class="ph-thin ph-warning-circle"></i>
-                    <p>Média</p>
-                  </div>
-                  <div class="priority-date">
-                    <i class="ph-thin ph-hourglass-medium"></i>
-                    <p>25 Out 2023</p>
-                  </div>
-                </div>
-              </div>
+         
             </div>
           </div>
 
@@ -257,6 +155,41 @@
                   readonly
                 />
                 <button type="submit" class="form-btn">Adicionar</button>
+              </form>
+            </div>
+          </div>
+
+          <div id="edit-modal" class="edit-modal">
+            <span class="close">&times;</span>
+            <div class="modal-content">
+              <form id="task-form" class="form-card">
+                <p>Edite sua tarefa</p>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="task-name"
+                  required
+                  placeholder="Nome da Tarefa"
+                />
+
+                <select class="form-input" id="task-priority">
+                  <option value="" disabled selected hidden>
+                    Selecione a prioridade
+                  </option>
+                  <option value="low">Baixa</option>
+                  <option value="medium">Média</option>
+                  <option value="high">Alta</option>
+                </select>
+
+                <input
+                  class="form-input"
+                  name="Data"
+                  id="datepicker"
+                  placeholder="Selecione uma data"
+                  required
+                  readonly
+                />
+                <button id="save-edit" type="submit" class="form-btn">Salvar</button>
               </form>
             </div>
           </div>

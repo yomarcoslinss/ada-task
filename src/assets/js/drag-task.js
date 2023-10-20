@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   addTaskButtons.forEach(function (addTaskButton) {
     addTaskButton.addEventListener("click", function () {
-      console.log("Clicou no botão de adicionar tarefa");
       taskModal.style.visibility = "visible";
     });
   });
@@ -67,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const taskPriority = document.getElementById("task-priority").value;
     const taskDate = document.getElementById("datepicker").value;
 
-    // Crie uma nova div de item com os detalhes da tarefa
     const newItem = document.createElement("div");
     newItem.classList.add("item");
     newItem.draggable = true;
@@ -97,15 +95,44 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     `;
 
-
-
-    // Adicione o novo item à coluna de cartões
     cardColumn.appendChild(newItem);
 
-    // Feche o modal
     taskModal.style.visibility = "hidden";
 
-    // Limpe o formulário
     taskForm.reset();
+
+    const editIcon = newItem.querySelector(".ph-pencil-simple");
+    const deleteIcon = newItem.querySelector(".ph-trash");
+
+    editIcon.addEventListener("click", function () {
+      editarCard(this);
+    });
+
+    deleteIcon.addEventListener("click", function () {
+      apagarCard(this);
+    });
+
+    function editarCard(icon) {
+      
+      const card = icon.closest(".item");
+      
+      const cardNameParagraph = card.querySelector(".card-name p");
+      
+      const novoNome = prompt("Novo nome do card:", cardNameParagraph.textContent);
+      
+      if (novoNome !== null) {
+        cardNameParagraph.textContent = novoNome;
+      }
+    }
+
+    function apagarCard(icon) {
+      const card = icon.closest(".item");
+
+      const confirmacao = confirm("excluir?");
+
+      if (confirmacao) {
+        card.remove();
+      }
+    }
   });
 });
