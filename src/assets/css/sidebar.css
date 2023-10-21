@@ -1,7 +1,7 @@
 section{
+    overflow: overlay;
+        position: fixed;
     height: 100vh;
-    display: flex;
-    display: inline-flex;
     position: absolute;
     background-image: url(https://ada-site-frontend.s3.sa-east-1.amazonaws.com/home/home-background.svg);
     background-repeat: no-repeat;
@@ -9,6 +9,12 @@ section{
     background-size: contain;
     background-color: rgb(24, 28, 35);
     width: 100%;
+
+    @media screen and (min-width: 991px) {
+        display: flex;
+        overflow: overlay;
+        position: fixed;
+    }
 }
 
 nav.menu-lateral{
@@ -22,6 +28,16 @@ nav.menu-lateral{
     /* top: 0;
     left: 0;  */
     transition: .3s;
+
+    @media screen and (max-width: 991px) {
+        padding: 5px;
+        position: fixed;
+        width: 10px;
+
+        > .btn-expandir > i{
+            font-size: 14px;
+        }
+    }
 }
 
 nav.menu-lateral.mostrar{
