@@ -103,6 +103,8 @@ window.onload = () => {
         sidebar.appendChild(newItem);
     });
   }
+
+
 };
 
 const ulQuadros = document.querySelector('#ulQuadros');
