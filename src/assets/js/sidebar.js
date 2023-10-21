@@ -104,3 +104,13 @@ window.onload = () => {
     });
   }
 };
+
+
+const ulQuadros = document.querySelector('#ulQuadros');
+
+ulQuadros.addEventListener('click', (e) => {
+    if(e.target.classList.contains('item-menu')) {
+        const itemClicado = e.target;
+        console.log("foi")
+    }
+})
