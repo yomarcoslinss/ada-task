@@ -31,7 +31,7 @@ const login = () => {
     senha: '',
   };
 
-  const listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]');
+  const listaUser = JSON.parse(localStorage.getItem('listaUser')) || [];
 
   listaUser.forEach(user => {
     if(valueEmail === user.email && valueSenha === user.senha){
@@ -62,7 +62,7 @@ const cadastrar = () => {
   validacoes.validarCadastroExistente(valueEmail);
   const valueSenha = validacoes.validarSenha(capturarValor(inputCadastroSenha));
   const termosAceitos = validacoes.validarCheckbox(checkAceitoTermos);
-  const listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]');
+  const listaUser = JSON.parse(localStorage.getItem('listaUser')) || [];
 
 
   listaUser.push({

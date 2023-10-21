@@ -64,7 +64,7 @@
               </li>
             </ul>
             <div class="area-botao">
-              <button class="btn-logout">Logout</button>
+              <button id="btnLogout" class="btn-logout">Logout</button>
             </div>
           </div>
         </nav>
@@ -91,10 +91,7 @@
 
               <i class="ph-thin ph-plus-circle add-item"></i>
             </div>
-            <div class="card-column">
-              
-             
-            </div>
+            <div class="card-column"></div>
           </div>
           <div class="column">
             <div class="card-title">
@@ -106,9 +103,7 @@
 
               <i class="ph-thin ph-plus-circle add-item"></i>
             </div>
-            <div class="card-column">
-              
-            </div>
+            <div class="card-column"></div>
           </div>
           <div class="column">
             <div class="card-title">
@@ -119,9 +114,7 @@
 
               <i class="ph-thin ph-plus-circle add-item"></i>
             </div>
-            <div class="card-column">
-         
-            </div>
+            <div class="card-column"></div>
           </div>
 
           <div id="task-modal" class="modal">
@@ -184,22 +177,25 @@
                 <input
                   class="form-input"
                   name="Data"
-                  id="datepicker"
+                  id="datepicker2"
                   placeholder="Selecione uma data"
                   required
                   readonly
                 />
-                <button id="save-edit" type="submit" class="form-btn">Salvar</button>
+                <button id="save-edit" type="submit" class="form-btn">
+                  Salvar
+                </button>
               </form>
             </div>
           </div>
         </div>
-
+        
         <!--  -->
       </section>
     </main>
 
-    <script src="./src/assets/js/drag-task.js"></script>
+    <script  src="./src/assets/js/utils/outerVisibility.js"></script>
+    <script  src="./src/assets/js/drag-task.js"></script>
     <script src="src/assets/js/sidebar.js"></script>
   </body>
 </html>
