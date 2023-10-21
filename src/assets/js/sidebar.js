@@ -105,12 +105,14 @@ window.onload = () => {
   }
 };
 
-
 const ulQuadros = document.querySelector('#ulQuadros');
 
 ulQuadros.addEventListener('click', (e) => {
-    if(e.target.classList.contains('item-menu')) {
-        const itemClicado = e.target;
-        console.log("foi")
+    if (e.target.closest('li.item-menu')) {
+        const quadroClicado = e.target.closest('li.item-menu');
+        const tituloQuadroClicado = quadroClicado.querySelector(".txt-link").innerText;
+        usuarioLogado.quadroSelecionado = tituloQuadroClicado;
+        console.log(usuarioLogado.quadroSelecionado);
+        localStorage.setItem("usuarioLogado", JSON.stringify(usuarioLogado));
     }
-})
+});

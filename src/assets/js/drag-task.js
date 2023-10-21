@@ -54,6 +54,15 @@ function init() {
 
     const newItem = createNewCard(taskName, taskPriority, taskDate);
 
+    const quadroAtual = usuarioAtual.quadros.find(quadro => quadro.titulo === usuarioLogado.quadroSelecionado);
+    quadroAtual.cartoes.push({
+      nome: taskName,
+      prioridade: taskPriority,
+      data: taskDate,
+    })
+
+    localStorage.setItem("usuarioAtual", JSON.stringify(usuarioAtual));
+
     cardColumn.appendChild(newItem);
 
     taskModal.style.visibility = "hidden";
@@ -79,8 +88,6 @@ function init() {
     const inputTaskName = editModal.querySelector("#task-name");
     const inputDatePicker = editModal.querySelector("#datepicker2");
     const selectTaskPriority = editModal.querySelector("#task-priority");
-
-    console.log("submit form edit");
 
     const priorityValue = validatePriority(selectTaskPriority.value);
 
