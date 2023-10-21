@@ -62,6 +62,7 @@ function init() {
     })
 
     localStorage.setItem("usuarioAtual", JSON.stringify(usuarioAtual));
+    localStorage.setItem("listaUser", JSON.stringify(listaUser));
 
     cardColumn.appendChild(newItem);
 
