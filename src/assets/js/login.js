@@ -103,7 +103,9 @@ export default function ativarAlert(msg, status) {
     root.style.setProperty('--cor-alert', 'green');
     messageImg.src = "./src/assets/img/sucess.png";
   } else {
+    const root = document.documentElement;
     messageImg.src = "./src/assets/img/error.png";
+    root.style.setProperty('--cor-alert', 'red');
   }
   const messageText = document.createElement("p");
   messageContainer.appendChild(messageImg);

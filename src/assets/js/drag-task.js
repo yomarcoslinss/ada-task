@@ -66,9 +66,12 @@ function init() {
 
     const newItem = createNewCard(taskName, taskPriority, taskDate);
 
-    const quadroLiAtual = usuarioLogado.quadroAtual.titulo;
-    const quadroUsuario = usuarioAtual.quadros.find(quadro => quadro.titulo === quadroLiAtual);
-    quadroUsuario.cartoes.push(taskName, taskPriority, taskDate);
+    const quadroAtual = usuarioAtual.quadros.find(quadro => quadro.titulo === usuarioLogado.quadroSelecionado);
+    quadroAtual.cartoes.push({
+      nome: taskName,
+      prioridade: taskPriority,
+      data: taskDate,
+    })
 
     localStorage.setItem("usuarioAtual", JSON.stringify(usuarioAtual));
     localStorage.setItem("listaUser", JSON.stringify(listaUser));
@@ -98,8 +101,6 @@ function init() {
     const inputTaskName = editModal.querySelector("#task-name");
     const inputDatePicker = editModal.querySelector("#datepicker2");
     const selectTaskPriority = editModal.querySelector("#task-priority");
-
-    console.log("submit form edit");
 
     const priorityValue = validatePriority(selectTaskPriority.value);
 
@@ -161,17 +162,6 @@ function createNewCard(taskName, taskPriority, taskDate) {
 
   return newItem;
 }
-
-// CONTINUAR DAQUI!!
-
-// window.onload = () => {
-//   usuarioAtual.quadros.forEach((quadro) => {
-//     quadro.cartoes.forEach((cartao) => {
-
-//     })
-//   })
-
-// }
 
 function getNewPosition(column, posY) {
   const cards = column.querySelectorAll(".item:not(.dragging)");
