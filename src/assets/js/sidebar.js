@@ -1,3 +1,7 @@
+if(localStorage.getItem('token') === null) {
+    window.location.href = "./index.html";
+}
+
 // Mostrar sidebar
 const btnExpandir = document.getElementById("btn-expandir")
 const menuSide = document.querySelector(".menu-lateral")
@@ -19,11 +23,12 @@ btnExpandir.addEventListener("click", function (e) {
 })
 
 // Criar Quadro
-const addQuadroBtn = document.getElementById("add-quadro")
-const closeQuadroBtn = document.getElementById("close-quadro")
-const quadroCard = document.querySelector(".quadro-card")
-const quadroTitleInput = document.getElementById("quadro-title")
-const createQuadroBtn = document.getElementById("create-quadro")
+const addQuadroBtn = document.getElementById("add-quadro");
+const closeQuadroBtn = document.getElementById("close-quadro");
+const quadroCard = document.querySelector(".quadro-card");
+const quadroTitleInput = document.getElementById("quadro-title");
+const createQuadroBtn = document.getElementById("create-quadro");
+const btnLogout = document.getElementById("btnLogout");
 
 addQuadroBtn.addEventListener("click", () => {
     quadroCard.style.display = "block"
@@ -53,4 +58,10 @@ createQuadroBtn.addEventListener("click", () => {
         quadroTitleInput.value = ""
         quadroCard.style.display = "none"
     }
+})
+
+btnLogout.addEventListener("click", () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('usuarioLogado');
+    window.location.href = "./index.html";
 })

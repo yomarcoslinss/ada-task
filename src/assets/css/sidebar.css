@@ -53,8 +53,8 @@ nav.menu-lateral.mostrar{
     font-size: 20px;
     cursor: pointer;
     background-color: var(--cor-primaria);
-    padding: 4px;
-    border-radius: 100%;
+    padding: 6px;
+    border-radius: 50%;
     position: fixed;
 }
 
