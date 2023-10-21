@@ -46,23 +46,26 @@
             <i class="bi bi-arrow-right" id="icon-expand"></i>
           </div>
           <div class="area-menu esconder">
-            <ul>
-              <div class="sidebar-top">
-                <h3>Seus Quadros</h3>
-                <span class="icon-add" title="Criar Quadro">
-                  <i class="bi bi-plus" id="add-quadro"></i>
-                </span>
-              </div>
-              <li class="item-menu">
-                <!-- <a href="#">
-                      <span class="icon">
-                          <i class="bi bi-columns-gap"></i>
-                      </span>
-                      <span class="txt-link">Quadro 1</span>
-                  </a>
-              </li> -->
-              </li>
-            </ul>
+            <div class="area-quadros">
+              <ul>
+                <div class="sidebar-top">
+                  <h3>Seus Quadros</h3>
+                  <span class="icon-add" title="Criar Quadro">
+                    <i class="bi bi-plus" id="add-quadro"></i>
+                  </span>
+                </div>
+                <li class="item-menu">
+                  <!-- <a href="#">
+                        <span class="icon">
+                            <i class="bi bi-columns-gap"></i>
+                        </span>
+                        <span class="txt-link">Quadro 1</span>
+                    </a>
+                </li> -->
+                </li>
+              </ul>
+            </div>
+            
             <div class="area-botao">
               <button id="btnLogout" class="btn-logout">Logout</button>
             </div>
@@ -130,7 +133,7 @@
                   placeholder="Nome da Tarefa"
                 />
 
-                <select class="form-input" id="task-priority">
+                <select class="form-input" id="task-priority" required>
                   <option value="" disabled selected hidden>
                     Selecione a prioridade
                   </option>
@@ -193,8 +196,8 @@
         <!--  -->
       </section>
     </main>
-
-    <script  src="./src/assets/js/utils/outerVisibility.js"></script>
+    <script src="./src/assets/js/validacoes.js"></script>
+    <script src="./src/assets/js/login.js"></script>
     <script  src="./src/assets/js/drag-task.js"></script>
     <script src="src/assets/js/sidebar.js"></script>
   </body>
