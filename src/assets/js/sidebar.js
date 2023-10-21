@@ -117,4 +117,4 @@ ulQuadros.addEventListener('click', (e) => {
         console.log(usuarioLogado.quadroSelecionado);
         localStorage.setItem("usuarioLogado", JSON.stringify(usuarioLogado));
     }
-});
+})
