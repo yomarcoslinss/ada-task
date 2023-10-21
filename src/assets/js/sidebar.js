@@ -1,26 +1,33 @@
-if(localStorage.getItem('token') === null) {
-    window.location.href = "./index.html";
+const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+const listaUser = JSON.parse(localStorage.getItem("listaUser"));
+const usuarioAtual = listaUser.find(
+  (user) => user.email === usuarioLogado.email
+);
+localStorage.setItem("usuarioAtual", JSON.stringify(usuarioAtual));
+
+if (localStorage.getItem("token") === null) {
+  window.location.href = "./index.html";
 }
 
 // Mostrar sidebar
-const btnExpandir = document.getElementById("btn-expandir")
-const menuSide = document.querySelector(".menu-lateral")
-const itemMenu = document.querySelector(".area-menu")
-const iconExpand = document.getElementById("icon-expand")
+const btnExpandir = document.getElementById("btn-expandir");
+const menuSide = document.querySelector(".menu-lateral");
+const itemMenu = document.querySelector(".area-menu");
+const iconExpand = document.getElementById("icon-expand");
 
 btnExpandir.addEventListener("click", function (e) {
-    menuSide.classList.toggle("mostrar")
-    itemMenu.classList.toggle("esconder")
+  menuSide.classList.toggle("mostrar");
+  itemMenu.classList.toggle("esconder");
 
-    if (menuSide.classList.contains("mostrar")) {
-        iconExpand.classList.remove("bi-arrow-right")
-        iconExpand.classList.add("bi-arrow-left")
-    } else {
-        iconExpand.classList.remove("bi-arrow-left")
-        iconExpand.classList.add("bi-arrow-right")
-        quadroCard.style.display = "none"
-    }
-})
+  if (menuSide.classList.contains("mostrar")) {
+    iconExpand.classList.remove("bi-arrow-right");
+    iconExpand.classList.add("bi-arrow-left");
+  } else {
+    iconExpand.classList.remove("bi-arrow-left");
+    iconExpand.classList.add("bi-arrow-right");
+    quadroCard.style.display = "none";
+  }
+});
 
 // Criar Quadro
 const addQuadroBtn = document.getElementById("add-quadro");
@@ -31,37 +38,69 @@ const createQuadroBtn = document.getElementById("create-quadro");
 const btnLogout = document.getElementById("btnLogout");
 
 addQuadroBtn.addEventListener("click", () => {
-    quadroCard.style.display = "block"
-    quadroTitleInput.focus()
-})
+  quadroCard.style.display = "block";
+  quadroTitleInput.focus();
+});
 
 closeQuadroBtn.addEventListener("click", () => {
-    quadroCard.style.display = "none"
-})
+  quadroCard.style.display = "none";
+});
 
 createQuadroBtn.addEventListener("click", () => {
-    const title = quadroTitleInput.value
-    if (title) {
-        const newItem = document.createElement("li")
-        newItem.className = "item-menu"
-        newItem.innerHTML = `
+  const title = quadroTitleInput.value;
+  if (title) {
+    const newItem = document.createElement("li");
+    newItem.className = "item-menu";
+    newItem.innerHTML = `
             <a href="#">
                 <span class="icon">
                     <i class="bi bi-columns-gap"></i>
                 </span>
                 <span class="txt-link">${title}</span>
             </a>
-        `
-        const sidebar = document.querySelector(".area-menu ul")
-        sidebar.appendChild(newItem)
+        `;
+    const sidebar = document.querySelector(".area-menu ul");
+    sidebar.appendChild(newItem);
 
-        quadroTitleInput.value = ""
-        quadroCard.style.display = "none"
+    if (!usuarioAtual.quadros) {
+      usuarioAtual.quadros = [];
     }
-})
+
+    usuarioAtual.quadros.push({
+      titulo: `${quadroTitleInput.value}`,
+      cartoes: [],
+    });
+
+    localStorage.setItem("usuarioAtual", JSON.stringify(usuarioAtual));
+    localStorage.setItem("listaUser", JSON.stringify(listaUser));
+
+    quadroTitleInput.value = "";
+    quadroCard.style.display = "none";
+  }
+});
 
 btnLogout.addEventListener("click", () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('usuarioLogado');
-    window.location.href = "./index.html";
-})
+  localStorage.removeItem("token");
+  localStorage.removeItem("usuarioAtual");
+  localStorage.removeItem("usuarioLogado");
+  window.location.href = "./index.html";
+});
+
+window.onload = () => {
+  if (usuarioAtual.quadros) {
+    usuarioAtual.quadros.forEach((quadro) => {
+        const newItem = document.createElement("li");
+        newItem.className = "item-menu";
+        newItem.innerHTML = `
+            <a href="#">
+                <span class="icon">
+                    <i class="bi bi-columns-gap"></i>
+                </span>
+                <span class="txt-link">${quadro.titulo}</span>
+            </a>
+        `;
+        const sidebar = document.querySelector(".area-menu ul");
+        sidebar.appendChild(newItem);
+    });
+  }
+};

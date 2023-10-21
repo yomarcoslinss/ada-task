@@ -46,7 +46,7 @@ const login = () => {
       window.location.href = './dashboard.html';
     }, 2550)
 
-    let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
+    const token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
     localStorage.setItem('token', token);
 
     localStorage.setItem('usuarioLogado', JSON.stringify(userValid));
@@ -62,7 +62,10 @@ const cadastrar = () => {
   validacoes.validarCadastroExistente(valueEmail);
   const valueSenha = validacoes.validarSenha(capturarValor(inputCadastroSenha));
   const termosAceitos = validacoes.validarCheckbox(checkAceitoTermos);
-  const listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]');
+
+  const listaUser = JSON.parse(localStorage.getItem('listaUser')) || [];
+
+
 
 
   listaUser.push({
@@ -71,8 +74,19 @@ const cadastrar = () => {
     senha: valueSenha,
   })
 
-  localStorage.setItem('listaUser', JSON.stringify(listaUser))
+  localStorage.setItem('listaUser', JSON.stringify(listaUser));
   ativarAlert("Cadastrando usuário...", true)
+  const token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
+
+  const userValid = {
+    email: valueEmail,
+    senha: valueSenha,
+  };
+  localStorage.setItem('token', token);
+
+  localStorage.setItem('usuarioLogado', JSON.stringify(userValid));
+
+
   setInterval(() => {
     window.location.href = './dashboard.html';
   }, 2550)
