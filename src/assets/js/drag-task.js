@@ -81,10 +81,10 @@ function init() {
 
     const deleteIcon = newItem.querySelector(".ph-trash");
 
-    const btnPencil = newItem.querySelector(".ph-pencil-simple"); // Alterado para buscar o botão de lápis dentro do novo cartão
+    const btnPencil = newItem.querySelector(".ph-pencil-simple");
 
     btnPencil.addEventListener("click", function (e) {
-      editarCard(newItem); // Agora passando o novo cartão para a função editarCard
+      editarCard(newItem);
     });
 
     deleteIcon.addEventListener("click", function () {
@@ -122,6 +122,11 @@ function init() {
 }
 
 function createNewCard(taskName, taskPriority, taskDate) {
+  if (!taskName || !taskPriority || !taskDate) {
+    alert("Preencha todos os campos obrigatórios para criar o cartão.");
+    return null;
+  }
+
   const newItem = document.createElement("div");
   newItem.classList.add("item");
   newItem.setAttribute("id", "card-item");
@@ -200,7 +205,6 @@ function editarCard(cardItem) {
   showPanel(taskEditModal);
 
   handleDatepicker("#datepicker2");
-
 
   const inputTaskName = taskEditModal.querySelector("#task-name");
   const inputDatePicker = taskEditModal.querySelector("#datepicker2");
