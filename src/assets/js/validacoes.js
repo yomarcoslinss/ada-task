@@ -115,6 +115,7 @@ const validacoes = {
         if(email === user.email){
           throw new Error("Esse email já está cadastrado");
         }
+
       });
     } catch(err) {
       ativarAlert(err.message);
