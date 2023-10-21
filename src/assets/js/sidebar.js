@@ -103,4 +103,18 @@ window.onload = () => {
         sidebar.appendChild(newItem);
     });
   }
+
+
 };
+
+
+const ulQuadros = document.querySelector('#ulQuadros');
+
+ulQuadros.addEventListener('click', (e) => {
+    if(e.target.classList.contains('item-menu')) {
+        const itemClicado = e.target.querySelector('.txt-link').innerText;
+        const quadro = usuarioAtual.quadros.find(quadro => quadro.titulo === itemClicado);
+        usuarioLogado.quadroAtual = quadro;
+        localStorage.setItem("usuarioLogado", JSON.stringify(usuarioLogado));
+    }
+})
